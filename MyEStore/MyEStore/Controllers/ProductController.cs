@@ -26,5 +26,15 @@ namespace MyEStore.Controllers
 			return View(result);
 
 		}
+
+		public IActionResult Detail(int id)
+		{
+			var data = _ctx.HangHoas.SingleOrDefault(p => p.MaHh == id);
+			if (data != null)
+			{
+				return View(data);
+			}
+			return NotFound();
+		}
 	}
 }
