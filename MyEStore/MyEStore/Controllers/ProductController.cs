@@ -27,6 +27,8 @@ namespace MyEStore.Controllers
 
 		}
 
+		[HttpGet("/product/detail/{id}")]
+		[HttpGet("/san-pham/{slug}-{id}")]		
 		public IActionResult Detail(int id)
 		{
 			var data = _ctx.HangHoas.SingleOrDefault(p => p.MaHh == id);

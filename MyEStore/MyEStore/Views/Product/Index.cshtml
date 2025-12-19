@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MyEStore.Models.HangHoaVM>
+@using MyEStore.Models
 
 @{
 	ViewData["Title"] = "Index";
@@ -49,7 +50,9 @@
 	{
 		<div class="hh-box">
 			<h3 class="hh-box-name">@hh.TenHh</h3>
-			<a asp-action="Detail" asp-route-id="@hh.MaHh">
+@* 			<a asp-action="Detail" asp-route-id="@hh.MaHh">
+ *@			
+			<a href="/san-pham/@hh.TenHh.ToSlug()-@hh.MaHh">
 				<img src="~/Hinh/HangHoa/@hh.Hinh" alt="@hh.TenHh" class="hh-box-img" />
 			</a>
 			<div class="hh-box-price">$ @hh.DonGia</div>
