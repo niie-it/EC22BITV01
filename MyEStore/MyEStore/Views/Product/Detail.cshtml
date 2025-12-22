@@ -2,6 +2,7 @@
 @{
 	ViewData["Title"] = "Detail";
 }
+<meta name="description" content="Sản phẩm @Model.TenHh - giá @Model.DonGia" />
 <style>
 	.text-bold {
 		font-weight: 800;
@@ -109,11 +110,11 @@
 
 	}
 </style>
-<div class="container my-5">
+<div class="container my-5" itemscope itemtype="https://schema.org/Product">
 	<div class="row">
 		<div class="col-md-5">
 			<div class="main-img">
-				<img class="img-fluid" src="~/Hinh/HangHoa/@Model.Hinh" alt="ProductS">
+				<img class="img-fluid" src="~/Hinh/HangHoa/@Model.Hinh" alt="ProductS" itemprop="image">
 				<div class="row my-3 previews">
 					<div class="col-md-3">
 						<img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
@@ -135,14 +136,14 @@
 				<div class="category text-bold">
 					Category: Women
 				</div>
-				<div class="product-title text-bold my-3">
+				<div class="product-title text-bold my-3" itemprop="name">
 					@Model.TenHh
 				</div>
 
 
 				<div class="price-area my-4">
 					<p class="old-price mb-1"><del>$100</del> <span class="old-price-discount text-danger">(20% off)</span></p>
-					<p class="new-price text-bold mb-1">$@Model.DonGia</p>
+					<p class="new-price text-bold mb-1" property="highPrice">$@Model.DonGia</p>
 					<p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
 
 				</div>
